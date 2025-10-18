@@ -1,0 +1,61 @@
+/* 기본 스타일 */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+}
+
+/* 상단 헤더 */
+header {
+  background: #667eea;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* 컨테이너 */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 입력창 */
+input[type="file"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* 버튼 */
+button {
+  padding: 10px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #556cd6;
+}
+
+/* 업로드 사진 영역 */
+.photo-item {
+  margin-top: 20px;
+}
+
+.photo-item img {
+  width: 100%;
+  border-radius: 10px;
+}
