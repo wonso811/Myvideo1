@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사진 업로드 사이트</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>내 사진 사이트</header>
+
+<div class="container">
+  <h2>사진 업로드 + 링크</h2>
+  <input type="file" id="imageInput" accept="image/*">
+  <input type="text" id="linkInput" placeholder="링크 입력">
+  <button onclick="addPhoto()">추가</button>
+
+  <div id="photoList"></div>
+</div>
+
+<script>
+const photoList = document.getElementById('photoList');
+
+function addPhoto() {
+  const fileInput = document.getElementById('imageInput');
+  const linkInput = document.getElementById('linkInput');
+  const file = fileInput.files[0];
+  const link = linkInput.value.trim();
+
+  if(!file) { alert("사진을 선택해주세요."); return; }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const item = document.createElement('div');
+    item.className = 'photo-item';
+    item.innerHTML = `
+      <a href="${link}" target="_blank">
+        <img src="${e.target.result}" alt="사진">
+      </a>
+    `;
+    photoList.prepend(item);
+  }
+  reader.readAsDataURL(file);
+
+  fileInput.value = '';
+  linkInput.value = '';
+}
+</script>
+</body>
+</html>
